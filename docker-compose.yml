@@ -27,12 +27,17 @@ services:
       interval: 10s
       timeout: 3s
       retries: 3
-  getir-case-study-backend:
+  java-21-demo-backend:
     restart: always
-    build: src
+    build:
+      dockerfile: Dockerfile
+      args:
+        APP_FILE_NAME: java-21-demo
+    pull_policy: never
     ports:
       - "8080:8080"
     environment:
+      APP_FILE_NAME: java-21-demo
       DB_URL: jdbc:postgresql://getirdb:5432/getircasestudydb
     depends_on:
       getirdb:

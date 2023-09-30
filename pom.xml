@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.munsal</groupId>
-	<artifactId>java21demo</artifactId>
+	<artifactId>java-21-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>java21demo</name>
-	<description>java21demo</description>
+	<description>JAVA 21 GRAALVM NATIVE IMAGE DEMONSTRATION</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
@@ -85,6 +85,9 @@
 			<plugin>
 				<groupId>org.graalvm.buildtools</groupId>
 				<artifactId>native-maven-plugin</artifactId>
+				<configuration>
+					<imageName>${project.artifactId}</imageName>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
