@@ -3,8 +3,7 @@ COPY /pom.xml ./pom.xml
 COPY /src/ ./src/
 RUN mvn clean native:compile -Pnative
 
-FROM ubuntu:22.04 as runner
-RUN apt-get update && apt-get install -y curl zip unzip gcc zlib1g-dev build-essential
+FROM mertunsl/native-image:base-builder as runner
 EXPOSE 8080
 ARG APP_FILE_NAME=java-21-demo
 # Copy the native executable into the containers

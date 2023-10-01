@@ -30,6 +30,7 @@ services:
   java-21-demo-backend:
     restart: always
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         APP_FILE_NAME: java-21-demo
