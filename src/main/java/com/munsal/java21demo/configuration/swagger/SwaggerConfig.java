@@ -1,4 +1,4 @@
-package com.munsal.java21demo.configuration;
+package com.munsal.java21demo.configuration.swagger;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;

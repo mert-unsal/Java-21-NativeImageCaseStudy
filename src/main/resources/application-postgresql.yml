@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/getircasestudydb}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/java21casestudydb}
     driver-class-name: org.postgresql.Driver
-    username: ${DB_USERNAME:getirdbuser}
-    password: ${DB_PASSWORD:getirdbpass}
+    username: ${DB_USERNAME:java21dbuser}
+    password: ${DB_PASSWORD:java21dbpass}
     hikari:
-      pool-name: GetirCaseStudyPostgresHikariPool
+      pool-name: java21CaseStudyPostgresHikariPool
       maximum-pool-size: 10
       minimum-idle: 3
       connectionTimeout: 10000
@@ -19,7 +19,7 @@ spring:
         jdbc:
           time_zone: UTC
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
-        package_to_scan: com.getir.javacasestudy
+        package_to_scan: com.java21.javacasestudy
   data:
     jpa:
       repositories:

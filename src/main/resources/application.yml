@@ -1,13 +1,18 @@
 spring:
   application:
-    name: GetirCaseStudy
-    description: Case Study for Getir Interview
+    name: JAVA21CaseStudy
+    description: Case Study for JAVA 21 Demonstration
   profiles:
     include: postgresql
+  thread-executor: virtual
 
 springdoc:
   swagger-ui:
     path: /swagger-ui
+
+security:
+  jwtSecret: java21CaseStudy
+  jwtExpirationMs: 86400000
 
 server:
   port: 8080
@@ -16,3 +21,4 @@ logging:
   level:
     org.hibernate: INFO
     org.liquibase: INFO
+

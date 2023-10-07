@@ -1,27 +1,21 @@
 version: '3.9'
 services:
-  getirdb:
+  java21db:
     image: "kartoza/postgis:13.0"
     restart: unless-stopped
-    hostname: getirdb
-    domainname: getirdb
+    hostname: java21db
+    domainname: java21db
     environment:
-      POSTGRES_USER: getirdbuser
-      POSTGRES_PASS: getirdbpass
-      POSTGRES_DBNAME: getircasestudydb
+      POSTGRES_USER: java21dbuser
+      POSTGRES_PASS: java21dbpass
+      POSTGRES_DBNAME: java21casestudydb
       ALLOW_IP_RANGE: 0.0.0.0/0
     ports:
       - "5432:5432"
     volumes:
-      - getirdb:/var
+      - java21db:/var
     networks:
-      - getir-net
-#    healthcheck:
-#      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
-#      interval: 30s
-#      timeout: 60s
-#      retries: 5
-#      start_period: 80s
+      - java21-net
     healthcheck:
       test: [ "CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'" ]
       interval: 10s
@@ -39,17 +33,17 @@ services:
       - "8080:8080"
     environment:
       APP_FILE_NAME: java-21-demo
-      DB_URL: jdbc:postgresql://getirdb:5432/getircasestudydb
+      DB_URL: jdbc:postgresql://java21db:5432/java21casestudydb
     depends_on:
-      getirdb:
+      java21db:
         condition: service_healthy
     networks:
-      - getir-net
+      - java21-net
 
 
 networks:
-  getir-net:
+  java21-net:
     driver: bridge
 
 volumes:
-  getirdb:
+  java21db:

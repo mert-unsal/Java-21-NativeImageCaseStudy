@@ -68,17 +68,17 @@
             create sequence if not exists order_seq;
             create sequence if not exists product_seq;
 
-            alter table product owner to getirdbuser;
-            alter table orders owner to getirdbuser;
-            alter table order_line owner to getirdbuser;
-            alter table book owner to getirdbuser;
-            alter table customer owner to getirdbuser;
+            alter table product owner to java21dbuser;
+            alter table orders owner to java21dbuser;
+            alter table order_line owner to java21dbuser;
+            alter table book owner to java21dbuser;
+            alter table customer owner to java21dbuser;
 
-            alter sequence book_seq owner to getirdbuser;
-            alter sequence customer_seq owner to getirdbuser;
-            alter sequence order_line_seq owner to getirdbuser;
-            alter sequence order_seq owner to getirdbuser;
-            alter sequence product_seq owner to getirdbuser;
+            alter sequence book_seq owner to java21dbuser;
+            alter sequence customer_seq owner to java21dbuser;
+            alter sequence order_line_seq owner to java21dbuser;
+            alter sequence order_seq owner to java21dbuser;
+            alter sequence product_seq owner to java21dbuser;
         </sql>
 
     </changeSet>
