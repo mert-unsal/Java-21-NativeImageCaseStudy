@@ -25,7 +25,7 @@ services:
     restart: always
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile2
       args:
         APP_FILE_NAME: java-21-demo
     pull_policy: never
